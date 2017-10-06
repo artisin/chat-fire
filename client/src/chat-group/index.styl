@@ -1,0 +1,44 @@
+
+
+ctr('.chat-group-cont', {
+  // edit: true
+  position: relative
+  height: 100vh
+  overflow: hidden
+  grid: {
+    center: true
+  }
+  components: {
+    '.chat-reply-cont': {
+      position: absolute
+      bottom: 75px
+      width: 100%
+    }
+    '.chat-message-cont': {
+      border: 1px solid rgba(0,0,0,.1)
+      position: absolute 0
+      bottom: 200px
+      overflow-x: hidden
+      overflow-y: scroll
+      padding: 5px
+      // grid: {
+      //   // container: true
+      // }
+      'comp-.message-cont': {
+        grid: {
+          column: '1/1'
+        }
+        height: auto
+        margin-bottom: 10px
+        'comp-.message-wrap': {
+          padding: 5px
+          grid: {
+            column: '1/3'
+          }
+
+        }
+      }
+    }
+  }
+})
+

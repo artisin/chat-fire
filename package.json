@@ -1,0 +1,22 @@
+{
+  "name": "chat-fire",
+  "version": "1.0.0",
+  "description": "chat-fire",
+  "license": "MIT",
+  "main": "server/server.js",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "scripts": {
+    "start": "docker-compose up"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.3.0",
+    "babel-preset-stage-2": "^6.24.1"
+  }
+}

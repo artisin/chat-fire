@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  # Our PostgreSQL service:
+  postgres:
+    image: postgres:9.6.1
+    environment:
+      POSTGRES_USER: "${DB_USER}"
+      POSTGRES_PASSWORD: "${DB_PWD}"
+    ports:
+      - 5433:5433
+    volumes:
+      # Mount the DB dumps folder into the container, to be able to create & access database dumps:
+      - ./db/dumps:/db/dumps
+      # Mount our 'restoredb' script:
+      - ./bin/restoredb:/bin/restoredb:ro
+      # Mount our 'dumpdb' script:
+      - ./bin/dumpdb:/bin/dumpdb:ro
+      # We'll mount the 'postgres-data' volume into the location Postgres stores it's data:
+      - postgres-data:/var/lib/postgresql/data
+
+
+# volumes
+volumes:
+  # store the data from the postgres databases:
+  postgres-data:
+    driver: local
